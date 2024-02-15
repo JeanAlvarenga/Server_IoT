@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<!-- saved from url=https://github.com/JeanAlvarenga/Server_IoT.git -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>SmartHouse</title>
+		<link href="./SmartHouse_files/style.css" type="text/css" rel="stylesheet">
+		<meta name="viewport" content="initial-scale=1.0">
+		<meta name="mobile-web-app-capable" content="yes">
+		<link href="./SmartHouse_files/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	</head>
+	
+	<body>
+		<div id="logo">MY HOME</div>
+		<div id="list">
+			<div class="box sensor" type="sensor" color="#ff3d3d" icon="thermometer-empty">
+				<div class="eff" style="background-color: rgb(255, 61, 61);"></div>
+				<div class="box-icon fa fa-thermometer-empty" style="color: rgb(255, 61, 61);"></div>
+				<div class="box-label">
+					<div class="t1">Sensor</div>
+					<div class="t2">Temperatura</div>
+				</div><br>
+				<div class="box-load" style="height: 0px;">
+					<div class="box-content">
+						<div class="box-content-margin">
+							<div class="btn" pin="A0">
+									<div class="btn-label">Sótão</div>
+									<div class="btn-icon fa fa-thermometer-empty"></div>
+									<div class="btn-value"></div>
+								</div>
+						<br></div>
+					</div>
+				</div>
+			</div>
+			<div class="box actuator" type="actuator" color="#eaff3d" icon="lightbulb-o">
+				<div class="eff" style="background-color: rgb(234, 255, 61);"></div>
+				<div class="box-icon fa fa-lightbulb-o" style="color: rgb(234, 255, 61);"></div>
+				<div class="box-label">
+					<div class="t1">Atuador</div>
+					<div class="t2">Iluminação</div>
+				</div><br>
+				<div class="box-load" style="height: 0px;">
+					<div class="box-content">
+						<div class="box-content-margin">
+							<div class="btn" pin="0">
+								<div class="btn-label">Sala</div>
+								<div class="btn-icon fa fa-lightbulb-o"></div>
+							</div>
+							<div class="btn" pin="1">
+								<div class="btn-label">Quarto 1</div>
+								<div class="btn-icon fa fa-lightbulb-o"></div>
+							</div>
+							<div class="btn" pin="2">
+								<div class="btn-label">Banheiro</div>
+								<div class="btn-icon fa fa-lightbulb-o"></div>
+							</div>
+							<div class="btn" pin="3">
+								<div class="btn-label">Cozinha</div>
+								<div class="btn-icon fa fa-lightbulb-o"></div>
+							</div>
+							<div class="btn" pin="4">
+								<div class="btn-label">Quarto 2</div>
+								<div class="btn-icon fa fa-lightbulb-o"></div>
+							</div>
+							<div class="btn" pin="5">
+								<div class="btn-label">Escritório</div>
+								<div class="btn-icon fa fa-lightbulb-o"></div>
+							</div>
+							<div class="btn" pin="6">
+								<div class="btn-label">Garagem</div>
+								<div class="btn-icon fa fa-lightbulb-o"></div>
+							</div>
+						<br></div>
+					</div>
+				</div>
+			</div>
+			<div class="box actuator" type="actuator" color="#ff3d3d" icon="exclamation">
+				<div class="eff" style="background-color: rgb(255, 61, 61);"></div>
+				<div class="box-icon fa fa-exclamation" style="color: rgb(255, 61, 61);"></div>
+				<div class="box-label">
+					<div class="t1">Atuador</div>
+					<div class="t2">Alerta</div>
+				</div><br>
+				<div class="box-load" style="height: 0px;">
+					<div class="box-content">
+						<div class="box-content-margin">
+							<div class="btn" pin="7">
+								<div class="btn-label">Sala</div>
+								<div class="btn-icon fa fa-exclamation"></div>
+							</div>
+						<br></div>
+					</div>
+				</div>
+			</div>
+			<div class="box actuator" type="actuator" color="#67ff59" icon="stop">
+				<div class="eff" style="background-color: rgb(103, 255, 89);"></div>
+				<div class="box-icon fa fa-stop" style="color: rgb(103, 255, 89);"></div>
+				<div class="box-label">
+					<div class="t1">Atuador</div>
+					<div class="t2">Portão</div>
+				</div><br>
+				<div class="box-load" style="height: 0px;">
+					<div class="box-content">
+						<div class="box-content-margin">
+							<div class="btn" pin="8" pin2="6">
+								<div class="btn-label">Garagem</div>
+								<div class="btn-icon fa fa-stop"></div>
+							</div>
+						<br></div>
+					</div>
+				</div>
+			</div>
+			<div class="box register" type="register" color="#fff26e" icon="bolt">
+				<div class="eff" style="background-color: rgb(255, 242, 110);"></div>
+				<div class="box-icon fa fa-bolt" style="color: rgb(255, 242, 110);"></div>
+				<div class="box-label">
+					<div class="t1">Registro</div>
+					<div class="t2">Consumo de Energia</div>
+				</div><br>
+			</div>
+			<div class="box register" type="register" color="#3d8eff" icon="tint">
+				<div class="eff" style="background-color: rgb(61, 142, 255);"></div>
+				<div class="box-icon fa fa-tint" style="color: rgb(61, 142, 255);"></div>
+				<div class="box-label">
+					<div class="t1">Registro</div>
+					<div class="t2">Consumo de Água</div>
+				</div><br>
+			</div>
+		</div>
+		<script src="./SmartHouse_files/jquery.min.js.download"></script>
+		<script src="./SmartHouse_files/motor.js.download"></script>
+	
+
+
+</body></html>
