@@ -18,8 +18,8 @@ br {
 #logo {
 	width: 45vw;
 	height: 20vw;
-	background: url(./logo_azul.png) no-repeat left center;
-	background-size: 14vw;
+	background: url(./logo.png) no-repeat left center;
+	background-size: 20vw;
 	margin: 2vw auto;
 	padding-left: 25vw;
 	line-height: 20vw;
