@@ -1,4 +1,4 @@
-var ip = "http://192.168.2.103"; // IP do ESP8266
+var ip = "http://192.168.0.106";
 
 $(".box").each(function() {
 	color = $(this).attr("color");
