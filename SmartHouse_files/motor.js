@@ -1,4 +1,5 @@
-var ip = "http://192.168.2.103"; // IP do ESP8266
+var ip = "http://192.168.2.108"; // IP do ESP8266
+var a ,b = 0;
 
 $(".box").each(function() {
 	color = $(this).attr("color");
@@ -11,12 +12,48 @@ $(".box").each(function() {
 	$(this).find(".box-icon").addClass("fa").addClass("fa-"+icon);
 	$(this).find(".btn-icon").addClass("fa").addClass("fa-"+icon);
 
-	if(type == "sensor") {
+	/* if(type == "sensor") {
 		$.get(ip+"/sensor", function(data) {
 			$(".box[type=sensor]").find(".btn-value").html((parseFloat(data).toFixed(1) + "ºC"));
 		});
+	} */
+
+	if(type == "sensor") {
+		$.get(ip+"/request", function(data) { // Data em formato JSON
+			$(".box[type=sensor]").find(".btn-value").html((parseFloat(data.temperature).toFixed(1) + "ºC"));
+
+			a = parseFloat(data.sala);
+			b = parseFloat(data.quarto_1);
+
+			if(a == 1) {
+				//console.log("valor_b:", data.valor_b);
+				$(".box[type=actuator]").find("#sala.btn-icon").css({
+					"color": "#eaff3d",
+					"text-shadow": "0 1px 1px #111, 0 0 5vw "+"#eaff3d",
+				}); 
+			}else{
+				$(".box[type=actuator]").find("#sala.btn-icon").css({
+					"color": "#ddd",
+					"text-shadow": "0 1px 1px #111",
+				});
+			}
+
+			if(b == 1) {
+				$(".box[type=actuator]").find("#quarto_1.btn-icon").css({
+					"color": "#eaff3d",
+					"text-shadow": "0 1px 1px #111, 0 0 5vw "+"#eaff3d",
+				});
+			}else{
+				$(".box[type=actuator]").find("#quarto_1.btn-icon").css({
+					"color": "#ddd",
+					"text-shadow": "0 1px 1px #111",
+				});
+			}
+
+		});
 	}
 });
+
 $(".box").on("mouseover", function() {
 	$(this).addClass("hover");
 });
@@ -53,7 +90,7 @@ $(".btn").on("click", function() {
 					$.get(ip+"/?pin="+pin2+"&val=0");
 				}, 1000);
 			}
-		} else {
+		} else { // Liga o atuador e atualiza a interface
 			$(this).addClass("on");
 			$(this).find(".btn-icon").css({
 				"color": color,
@@ -66,19 +103,20 @@ $(".btn").on("click", function() {
 				}, 1000);
 			}
 		}
-	} else {
+	} else { // Atualiza o valor do sensor
 		$.get(ip+"/sensor", function(data) {
 			$(".box[type=sensor]").find(".btn-value").html(parseFloat(data).toFixed(1) + "ºC");
 		});
 	}
 });
 
+// Define a função 'closeAll' para fechar todas as caixas.
 function closeAll() {
 	$(".box").removeClass("active");
 	$(".box-load").css("height", 0);
 }
+
+// Fecha todas as caixas ao redimensionar a janela.
 $(window).resize(function() {
 	closeAll();
 });
-
-
